@@ -1,0 +1,1420 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Bootstrap Table - Filter control</title>
+  <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css'>
+<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.10.0/bootstrap-table.min.css'>
+<link rel='stylesheet' href='https://rawgit.com/vitalets/x-editable/master/dist/bootstrap3-editable/css/bootstrap-editable.css'><link rel="stylesheet" href="./style.css">
+
+</head>
+<header>
+</header>
+<body>
+  <!-- <nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top">
+    <div class="container">
+      <a class="navbar-brand" href="#">Start Bootstrap</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="#">Predict
+            </a>
+          <li class="nav-item">
+            <a class="nav-link" href="table.html">Data</a>
+              <span class="sr-only">(current)</span>
+        </ul>
+      </div>
+    </div>
+  </nav> -->
+
+<!-- partial:index.partial.html -->
+<div class="container">
+<h1>MLMaterial Dataset</h1>
+<p><a href="../index.html">Material Library </a>based on previous sustainable material projects</p>
+
+<div id="toolbar">
+		<select class="form-control">
+				<option value="">Export Basic</option>
+				<option value="all">Export All</option>
+				<option value="selected">Export Selected</option>
+		</select>
+</div>
+
+<table id="table"
+			 data-toggle="table"
+			 data-search="true"
+			 data-filter-control="true"
+			 data-show-export="true"
+			 data-click-to-select="true"
+			 data-toolbar="#toolbar">
+	<thead>
+		<tr>
+			<th data-field="title" data-checkbox="true">title</th>
+			<!-- <th data-field="artist" data-filter-control="input" data-sortable="true">Artist</th> -->
+			<th data-field="propertyA" data-filter-control="select" data-sortable="true">Property A</th>
+			<th data-field="materialA" data-filter-control="input" data-sortable="true">Material A</th>
+      <th data-field="propertyB" data-filter-control="select" data-sortable="true">PropertyB</th>
+      <th data-field="materialB" data-filter-control="input" data-sortable="true">MaterialB</th>
+      <th data-field="propertyC" data-filter-control="select" data-sortable="true">PropertyC</th>
+			<th data-field="materialC" data-filter-control="input" data-sortable="true">MaterialC</th>
+      <th data-field="propertyD" data-filter-control="select" data-sortable="true">PropertyD</th>
+			<th data-field="materialD" data-filter-control="input" data-sortable="true">MaterialD</th>
+      <th data-field="transform" data-filter-control="select" data-sortable="true">Transform</th>
+      <th data-field="application" data-filter-control="select" data-sortable="true">Application</th>
+      <th data-field="texture" data-filter-control="select" data-sortable="true">Texture</th>
+      <th data-field="keyword" data-filter-control="select" data-sortable="true">Final Property</th>
+      <th data-field="link" data-filter-control="input" data-sortable="true">Keyword</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td class="bs-checkbox "><input data-index="0" name="btSelectItem" type="checkbox"></td>
+      <td>plant</td>
+      <td>timber</td>
+      <td>bioresin</td>
+      <td>bioresin</td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+      <td>mix</td>
+      <td>furniture</td>
+      <td>hard</td>
+      <td>paint</td>
+      <td>timber wood foam furniture chair rough</td>
+		</tr>
+		<tr>
+			<td class="bs-checkbox "><input data-index="1" name="btSelectItem" type="checkbox"></td>
+      <td>animal</td>
+<td>leather</td>
+<td>bioresin</td>
+<td>natural bone glue</td>
+<td> </td>
+<td> </td>
+<td> </td>
+<td> </td>
+<td>heat</td>
+<td>furniture</td>
+<td>hard</td>
+<td>material</td>
+<td>wood furniture chair table</td>
+		</tr>
+		<tr>
+			<td class="bs-checkbox "><input data-index="2" name="btSelectItem" type="checkbox"></td>
+      <td>mineral</td>
+      <td>stone</td>
+      <td>plastic</td>
+      <td>plastic</td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+      <td>mix</td>
+      <td>construction</td>
+      <td>hard</td>
+      <td>rock</td>
+      <td>brick commercial tile multi-functional</td>
+		</tr>
+		<tr>
+			<td class="bs-checkbox "><input data-index="3" name="btSelectItem" type="checkbox"></td>
+      <td>plant</td>
+<td>plantain waste</td>
+<td>metal</td>
+<td>aluminium waste</td>
+<td>food</td>
+<td>coffee</td>
+<td> </td>
+<td> </td>
+<td>mix</td>
+<td>material</td>
+<td>hard</td>
+<td>material</td>
+<td>material Puerto Rico stone location-based coffee metal</td>
+		</tr>
+		<tr>
+			<td class="bs-checkbox "><input data-index="4" name="btSelectItem" type="checkbox"></td>
+      <td>plastic</td>
+<td>sls print waste</td>
+<td>chemical</td>
+<td>silica sand</td>
+<td> </td>
+<td> </td>
+<td> </td>
+<td> </td>
+<td>heat</td>
+<td>furniture</td>
+<td>hard</td>
+<td>material</td>
+<td>3d-print plastic sls pla mineral structure art</td>
+		</tr>
+		<tr>
+      <td class="bs-checkbox "><input data-index="4" name="btSelectItem" type="checkbox"></td>
+      <td>paper</td>
+<td>newspaper</td>
+<td>chemical</td>
+<td>glue</td>
+<td> </td>
+<td> </td>
+<td> </td>
+<td> </td>
+<td>compress</td>
+<td>construction</td>
+<td>hard</td>
+<td>wood</td>
+<td>wood glue furniture construction commercial tile</td>
+		</tr>
+		<tr>
+      <td class="bs-checkbox "><input data-index="4" name="btSelectItem" type="checkbox"></td>
+      <td>metal</td>
+      <td>electronic (aluminium)</td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+      <td>knit</td>
+      <td>textile</td>
+      <td>soft</td>
+      <td>textile</td>
+      <td>electronics metal knit weave textile metallic</td>
+		</tr>
+		<tr>
+			<td class="bs-checkbox "><input data-index="7" name="btSelectItem" type="checkbox"></td>
+      <td>plastic</td>
+<td>plastic</td>
+<td> </td>
+<td> </td>
+<td> </td>
+<td> </td>
+<td> </td>
+<td> </td>
+<td>heat</td>
+<td>material</td>
+<td>hard</td>
+<td>bioplastic</td>
+<td>plastic melt heat heatpress machine blend shred</td>
+		</tr>
+		<tr>
+			<td class="bs-checkbox "><input data-index="8" name="btSelectItem" type="checkbox"></td>
+      <td>plastic</td>
+<td>plastic bottle</td>
+<td> </td>
+<td> </td>
+<td> </td>
+<td> </td>
+<td> </td>
+<td> </td>
+<td>heat</td>
+<td>mechanism</td>
+<td>hard</td>
+<td>bioplastic</td>
+<td>joint plastic bottle furniture wood mechanic</td>
+		</tr>
+		<tr>
+			<td class="bs-checkbox "><input data-index="9" name="btSelectItem" type="checkbox"></td>
+      <td>plant</td>
+<td>pine needles</td>
+<td> </td>
+<td> </td>
+<td> </td>
+<td> </td>
+<td> </td>
+<td> </td>
+<td>compress</td>
+<td>furniture</td>
+<td>soft</td>
+<td>textile</td>
+<td>pine wool carpet soft hard multi-functional furniture chair heatpress</td>
+		</tr>
+		<tr>
+			<td class="bs-checkbox "><input data-index="10" name="btSelectItem" type="checkbox"></td>
+      <td>plant</td>
+<td>pinus pinaster</td>
+<td>chemical</td>
+<td>cellulose</td>
+<td>algae</td>
+<td>lignin</td>
+<td>plant</td>
+<td>rosin</td>
+<td>heat</td>
+<td>resin</td>
+<td>hard</td>
+<td>material</td>
+<td>bio-resin bowl mug mould</td>
+		</tr>
+		<tr>
+		<td class="bs-checkbox "><input data-index="11" name="btSelectItem" type="checkbox"></td>
+    <td>plant</td>
+<td>willow branches</td>
+<td>water</td>
+<td>water</td>
+<td> </td>
+<td> </td>
+<td> </td>
+<td> </td>
+<td>heat</td>
+<td>pigment</td>
+<td>hard</td>
+<td>paint</td>
+<td>willow plant</td>
+		</tr>
+    <tr>
+			<td class="bs-checkbox "><input data-index="10" name="btSelectItem" type="checkbox"></td>
+      <td>algae</td>
+  <td>seaweed</td>
+  <td> </td>
+  <td> </td>
+  <td> </td>
+  <td> </td>
+  <td> </td>
+  <td> </td>
+  <td>heat</td>
+  <td>dye</td>
+  <td>soft</td>
+  <td>paint</td>
+  <td>seaweed algae translucent soft textile chair weave</td>
+		</tr>
+    <tr>
+			<td class="bs-checkbox "><input data-index="10" name="btSelectItem" type="checkbox"></td>
+      <td>algae</td>
+<td>seaweed</td>
+<td> </td>
+<td> </td>
+<td> </td>
+<td> </td>
+<td> </td>
+<td> </td>
+<td>dry</td>
+<td>furniture</td>
+<td>soft</td>
+<td>paint</td>
+<td>seaweed composite chair rough furniture hard</td>
+		</tr>
+    <tr>
+			<td class="bs-checkbox "><input data-index="10" name="btSelectItem" type="checkbox"></td>
+      <td>algae</td>
+<td>bull kelp</td>
+<td> </td>
+<td> </td>
+<td> </td>
+<td> </td>
+<td> </td>
+<td> </td>
+<td>dry</td>
+<td>textile</td>
+<td>flexible</td>
+<td>textile</td>
+<td>clothing textile hard</td>
+		</tr>
+    <tr>
+			<td class="bs-checkbox "><input data-index="10" name="btSelectItem" type="checkbox"></td>
+      <td>plant</td>
+<td>corn husk</td>
+<td>plant</td>
+<td>charcoal</td>
+<td> </td>
+<td> </td>
+<td> </td>
+<td> </td>
+<td>heat</td>
+<td>material</td>
+<td>hard</td>
+<td>material</td>
+<td>panel sound thermal insulation music</td>
+		</tr>
+    <tr>
+			<td class="bs-checkbox "><input data-index="10" name="btSelectItem" type="checkbox"></td>
+      <td>animal</td>
+<td>sheep wool</td>
+<td>bioresin</td>
+<td>bioresin</td>
+<td> </td>
+<td> </td>
+<td> </td>
+<td> </td>
+<td>heat</td>
+<td>furniture</td>
+<td>hard</td>
+<td>furniture</td>
+<td>furniture hard</td>
+		</tr>
+    <tr>
+			<td class="bs-checkbox "><input data-index="10" name="btSelectItem" type="checkbox"></td>
+      <td>animal</td>
+<td>black propolis</td>
+<td>insect</td>
+<td>cocoon</td>
+<td>insect</td>
+<td>natural bee resin</td>
+<td>insect</td>
+<td>sikworm</td>
+<td>heat</td>
+<td>resin</td>
+<td>hard</td>
+<td>glass</td>
+<td>natural bio-resin glass clay</td>
+		</tr>
+    <tr>
+			<td class="bs-checkbox "><input data-index="10" name="btSelectItem" type="checkbox"></td>
+  <td>animal</td>
+  <td>cow dung</td>
+  <td>mineral</td>
+  <td>clay</td>
+  <td>plant</td>
+  <td>straw</td>
+  <td> </td>
+  <td> </td>
+  <td>mix</td>
+  <td>material</td>
+  <td>hard</td>
+  <td>rock</td>
+  <td>brick hard furniture installation</td>
+		</tr>
+    <tr>
+			<td class="bs-checkbox "><input data-index="10" name="btSelectItem" type="checkbox"></td>
+      <td>animal</td>
+<td>manure </td>
+<td>chemical</td>
+<td>cellulose</td>
+<td> </td>
+<td> </td>
+<td> </td>
+<td> </td>
+<td>grow</td>
+<td>textile</td>
+<td>soft</td>
+<td>bioplastic</td>
+<td>biotextiles bioplastic paper textile cellulose-derivatives</td>
+		</tr>
+    <tr>
+			<td class="bs-checkbox "><input data-index="10" name="btSelectItem" type="checkbox"></td>
+      <td>human</td>
+  <td>hair</td>
+  <td>chemical</td>
+  <td>resin</td>
+  <td> </td>
+  <td> </td>
+  <td> </td>
+  <td> </td>
+  <td>knit</td>
+  <td>textile</td>
+  <td>soft</td>
+  <td>textile</td>
+  <td>hair fabric fishing textile net</td>
+		</tr>
+    <tr>
+			<td class="bs-checkbox "><input data-index="10" name="btSelectItem" type="checkbox"></td>
+      <td>human</td>
+<td>hair</td>
+<td> </td>
+<td> </td>
+<td> </td>
+<td> </td>
+<td> </td>
+<td> </td>
+<td>compress</td>
+<td>material</td>
+<td>hard</td>
+<td>furniture</td>
+<td>natural resin bioplastic amber translucent aesthetics art</td>
+		</tr>
+    <tr>
+			<td class="bs-checkbox "><input data-index="10" name="btSelectItem" type="checkbox"></td>
+      <td>human</td>
+<td>hair</td>
+<td>metal</td>
+<td>aluminium </td>
+<td> </td>
+<td> </td>
+<td> </td>
+<td> </td>
+<td>heat</td>
+<td>pigment</td>
+<td>hard</td>
+<td>paint</td>
+<td>color metal black pigment coating</td>
+		</tr>
+    <tr>
+			<td class="bs-checkbox "><input data-index="10" name="btSelectItem" type="checkbox"></td>
+      <td>dust</td>
+  <td>dust</td>
+  <td> </td>
+  <td> </td>
+  <td> </td>
+  <td> </td>
+  <td> </td>
+  <td> </td>
+  <td>grow</td>
+  <td>pigment</td>
+  <td>hard</td>
+  <td>coating</td>
+  <td>jewlery ceramic glaze</td>
+		</tr>
+    <tr>
+			<td class="bs-checkbox "><input data-index="10" name="btSelectItem" type="checkbox"></td>
+      <td>dust</td>
+<td>dust</td>
+<td>bioresin</td>
+<td>bio-resin</td>
+<td> </td>
+<td> </td>
+<td> </td>
+<td> </td>
+<td>compress</td>
+<td>material</td>
+<td>hard</td>
+<td>coating</td>
+<td>jewlery stone marble coating small rough</td>
+		</tr>
+    <tr>
+			<td class="bs-checkbox "><input data-index="10" name="btSelectItem" type="checkbox"></td>
+      <td>dust</td>
+<td>dust</td>
+<td>chemical</td>
+<td>glue</td>
+<td> </td>
+<td> </td>
+<td> </td>
+<td> </td>
+<td>compress</td>
+<td>furniture</td>
+<td>hard</td>
+<td>coating</td>
+<td>black marble smooth construction furniture</td>
+		</tr>
+    <tr>
+			<td class="bs-checkbox "><input data-index="10" name="btSelectItem" type="checkbox"></td>
+      <td>glass</td>
+<td>glass waste</td>
+<td>mineral</td>
+<td>cement</td>
+<td> </td>
+<td> </td>
+<td> </td>
+<td> </td>
+<td>mix</td>
+<td>material</td>
+<td>hard</td>
+<td>rock</td>
+<td>construction material hard tile location-oriented East-Africa </td>
+		</tr>
+    <tr>
+			<td class="bs-checkbox "><input data-index="10" name="btSelectItem" type="checkbox"></td>
+      <td>seafood</td>
+<td>mussel shell</td>
+<td> </td>
+<td> </td>
+<td> </td>
+<td> </td>
+<td> </td>
+<td> </td>
+<td>mix</td>
+<td>material</td>
+<td>hard</td>
+<td>material</td>
+<td>hard plaster location-oriented Ireland marine homeware ceramic marine seafood</td>
+		</tr>
+    <tr>
+			<td class="bs-checkbox "><input data-index="10" name="btSelectItem" type="checkbox"></td>
+      <td>plant</td>
+<td>wheat</td>
+<td>plant</td>
+<td>rye straw</td>
+<td> </td>
+<td> </td>
+<td> </td>
+<td> </td>
+<td>knit</td>
+<td>textile</td>
+<td>soft</td>
+<td>textile</td>
+<td>weave textile tradition knit swiss straw location-oriented</td>
+		</tr>
+    <tr>
+			<td class="bs-checkbox "><input data-index="10" name="btSelectItem" type="checkbox"></td>
+      <td>algae</td>
+<td>agar</td>
+<td> </td>
+<td> </td>
+<td> </td>
+<td> </td>
+<td> </td>
+<td> </td>
+<td>heat</td>
+<td>material</td>
+<td>soft</td>
+<td>bioplastic</td>
+<td>bioplastic translucent solid homeware hard disposability biodegradable translucent</td>
+		</tr>
+    <tr>
+			<td class="bs-checkbox "><input data-index="10" name="btSelectItem" type="checkbox"></td>
+      <td>plant</td>
+<td>pine fibre</td>
+<td> </td>
+<td> </td>
+<td> </td>
+<td> </td>
+<td> </td>
+<td> </td>
+<td>heat</td>
+<td>textile</td>
+<td>soft</td>
+<td>cooking method</td>
+<td>temporary outdoor cooking grill utensil</td>
+		</tr>
+    <tr>
+			<td class="bs-checkbox "><input data-index="10" name="btSelectItem" type="checkbox"></td>
+      <td>plant</td>
+<td>plant-based lyocell</td>
+<td> </td>
+<td> </td>
+<td> </td>
+<td> </td>
+<td> </td>
+<td> </td>
+<td>heat</td>
+<td>textile</td>
+<td>soft</td>
+<td>textile</td>
+<td>fashion textile clothing short-life</td>
+		</tr>
+    <tr>
+			<td class="bs-checkbox "><input data-index="10" name="btSelectItem" type="checkbox"></td>
+      <td>chemical</td>
+<td>phenolic resin</td>
+<td>plastic</td>
+<td>thermosetting plastic</td>
+<td>chemical</td>
+<td>calcium carbonate</td>
+<td>mineral</td>
+<td>wood flour</td>
+<td>heat</td>
+<td>material</td>
+<td>hard</td>
+<td>bioplastic</td>
+<td>bioplastic reform plastic thermosetting recycle</td>
+		</tr>
+    <tr>
+			<td class="bs-checkbox "><input data-index="10" name="btSelectItem" type="checkbox"></td>
+      <td>plant</td>
+<td>plant</td>
+<td>textile</td>
+<td>textile</td>
+<td> </td>
+<td> </td>
+<td> </td>
+<td> </td>
+<td>heat</td>
+<td>material</td>
+<td>hard</td>
+<td>bioplastic</td>
+<td>bioplastic eyewear glasses compostable durable</td>
+		</tr>
+    <tr>
+			<td class="bs-checkbox "><input data-index="10" name="btSelectItem" type="checkbox"></td>
+      <td>plant</td>
+<td>flax</td>
+<td>starch</td>
+<td>pla</td>
+<td> </td>
+<td> </td>
+<td> </td>
+<td> </td>
+<td>heat</td>
+<td>furniture</td>
+<td>hard</td>
+<td>bioplastic</td>
+<td>bioplastic chair furniture hard flax pla</td>
+		</tr>
+    <tr>
+			<td class="bs-checkbox "><input data-index="10" name="btSelectItem" type="checkbox"></td>
+      <td>fungi</td>
+<td>mycelium</td>
+<td> </td>
+<td> </td>
+<td> </td>
+<td> </td>
+<td> </td>
+<td> </td>
+<td>grow</td>
+<td>textile</td>
+<td>flexible</td>
+<td>leather</td>
+<td>leather grow mycelium biodegradable mushroom</td>
+		</tr>
+    <tr>
+			<td class="bs-checkbox "><input data-index="10" name="btSelectItem" type="checkbox"></td>
+      <td>fungi</td>
+  <td>mycelium</td>
+  <td> </td>
+  <td> </td>
+  <td> </td>
+  <td> </td>
+  <td> </td>
+  <td> </td>
+  <td>grow</td>
+  <td>material</td>
+  <td>soft</td>
+  <td>bioplastic</td>
+  <td>bioplastic mycelium fungi architecture design grow</td>
+		</tr>
+    <tr>
+			<td class="bs-checkbox "><input data-index="10" name="btSelectItem" type="checkbox"></td>
+      <td>fungi</td>
+<td>mycelium</td>
+<td> </td>
+<td> </td>
+<td> </td>
+<td> </td>
+<td> </td>
+<td> </td>
+<td>heat</td>
+<td>textile</td>
+<td>soft</td>
+<td>coating</td>
+<td>textile pattern mycelium  grow</td>
+		</tr>
+    <tr>
+			<td class="bs-checkbox "><input data-index="10" name="btSelectItem" type="checkbox"></td>
+      <td>fungi</td>
+<td>mycelium</td>
+<td>water</td>
+<td>water</td>
+<td> </td>
+<td> </td>
+<td> </td>
+<td> </td>
+<td>grow</td>
+<td>furniture</td>
+<td>hard</td>
+<td>material</td>
+<td>lamp homeware mycelium mushroom grow</td>
+		</tr>
+    <tr>
+			<td class="bs-checkbox "><input data-index="10" name="btSelectItem" type="checkbox"></td>
+      <td>plant</td>
+<td>cellulose</td>
+<td>fungi</td>
+<td>bacteria</td>
+<td> </td>
+<td> </td>
+<td> </td>
+<td> </td>
+<td>grow</td>
+<td>pattern</td>
+<td>hard</td>
+<td>coating</td>
+<td>paint bacterial cellulose pigment grow</td>
+		</tr>
+    <tr>
+			<td class="bs-checkbox "><input data-index="10" name="btSelectItem" type="checkbox"></td>
+      <td>food</td>
+<td>oat</td>
+<td>plant</td>
+<td>wheat</td>
+<td> </td>
+<td> </td>
+<td> </td>
+<td> </td>
+<td>mix</td>
+<td>composite</td>
+<td>hard</td>
+<td>material</td>
+<td>grow plant carpet pattern textile clothing rough root rootsystem</td>
+		</tr>
+    <tr>
+			<td class="bs-checkbox "><input data-index="10" name="btSelectItem" type="checkbox"></td>
+      <td>plastic</td>
+<td>plastic</td>
+<td>textile</td>
+<td>textile</td>
+<td>glass</td>
+<td>glass</td>
+<td>metal</td>
+<td>steel</td>
+<td>compress</td>
+<td>furniture</td>
+<td>hard</td>
+<td>rock</td>
+<td>furniture recycle marble rough</td>
+		</tr>
+    <tr>
+			<td class="bs-checkbox "><input data-index="10" name="btSelectItem" type="checkbox"></td>
+      <td>plastic</td>
+<td>plastic waste</td>
+<td>mineral</td>
+<td>stone</td>
+<td> </td>
+<td> </td>
+<td> </td>
+<td> </td>
+<td>mix</td>
+<td>furniture</td>
+<td>hard</td>
+<td>rock</td>
+<td>art sculpture waste environment history grow</td>
+		</tr>
+    <tr>
+			<td class="bs-checkbox "><input data-index="10" name="btSelectItem" type="checkbox"></td>
+      <td>food</td>
+<td>coffee ground</td>
+<td>vinegar</td>
+<td>vinegar</td>
+<td>glycerin</td>
+<td>glycerin</td>
+<td>water</td>
+<td>water</td>
+<td>mix</td>
+<td>composite</td>
+<td>hard</td>
+<td>material</td>
+<td>composite bowl mug mould hard homeware rough</td>
+		</tr>
+    <tr>
+      <td class="bs-checkbox "><input data-index="10" name="btSelectItem" type="checkbox"></td>
+      <td>algae</td>
+<td>carrageenan iota</td>
+<td>glycerin</td>
+<td>glycerin</td>
+<td>water</td>
+<td>water</td>
+<td> </td>
+<td> </td>
+<td>heat</td>
+<td>composite</td>
+<td>hard</td>
+<td>material</td>
+<td>leather soft translucent</td>
+		</tr>
+    <tr>
+			<td class="bs-checkbox "><input data-index="10" name="btSelectItem" type="checkbox"></td>
+      <td>food</td>
+<td>eggshell</td>
+<td>vinegar</td>
+<td>vinegar</td>
+<td>chemical</td>
+<td>alginate</td>
+<td>water</td>
+<td>water</td>
+<td>heat</td>
+<td>composite</td>
+<td>flexible</td>
+<td>material</td>
+<td>composite hard solid</td>
+		</tr>
+    <tr>
+			<td class="bs-checkbox "><input data-index="10" name="btSelectItem" type="checkbox"></td>
+      <td>algae</td>
+<td>agar agar</td>
+<td>glycerin</td>
+<td>glycerin</td>
+<td>water</td>
+<td>water</td>
+<td>starch</td>
+<td>starch</td>
+<td>heat</td>
+<td>bioplastic</td>
+<td>flexible</td>
+<td>bioplastic</td>
+<td>composite container cork rough homeware</td>
+		</tr>
+    <tr>
+			<td class="bs-checkbox "><input data-index="10" name="btSelectItem" type="checkbox"></td>
+      <td>seafood</td>
+<td>chitosan</td>
+<td>glycerin</td>
+<td>glycerin</td>
+<td>vinegar</td>
+<td>vinegar</td>
+<td>water</td>
+<td>water</td>
+<td>grow</td>
+<td>bioplastic</td>
+<td>soft</td>
+<td>bioplastic</td>
+<td>rubber bioplastic soft flexible seafood marine</td>
+		</tr>
+    <tr>
+			<td class="bs-checkbox "><input data-index="10" name="btSelectItem" type="checkbox"></td>
+      <td>food</td>
+<td>green tea</td>
+<td>food</td>
+<td>sugar</td>
+<td>chemical</td>
+<td>sodium bicarbonate</td>
+<td>water</td>
+<td>water</td>
+<td>grow</td>
+<td>textile</td>
+<td>soft</td>
+<td>textile</td>
+<td>soft translucent fermented origami</td>
+		</tr>
+    <tr>
+			<td class="bs-checkbox "><input data-index="10" name="btSelectItem" type="checkbox"></td>
+      <td>algae</td>
+<td>agar agar</td>
+<td>glycerin</td>
+<td>glycerin</td>
+<td>starch</td>
+<td>starch</td>
+<td>plant</td>
+<td>cork</td>
+<td>heat</td>
+<td>composite</td>
+<td>hard</td>
+<td>material</td>
+<td>cork composite homeware</td>
+		</tr>
+    <tr>
+			<td class="bs-checkbox "><input data-index="10" name="btSelectItem" type="checkbox"></td>
+<td>algae</td>
+<td>agar agar</td>
+<td>glycerin</td>
+<td>glycerin</td>
+<td>water</td>
+<td>water</td>
+<td> </td>
+<td> </td>
+<td>heat</td>
+<td>bioplastic</td>
+<td>soft</td>
+<td>bioplastic</td>
+<td>translucent bioplastic soft flexible</td>
+		</tr>
+    <tr>
+			<td class="bs-checkbox "><input data-index="10" name="btSelectItem" type="checkbox"></td>
+      <td>algae</td>
+<td>agar agar</td>
+<td>glycerin</td>
+<td>glycerin</td>
+<td>food</td>
+<td>gelatin</td>
+<td>water</td>
+<td>water</td>
+<td>heat</td>
+<td>bioplastic</td>
+<td>soft</td>
+<td>bioplastic</td>
+<td>translucent bioplastic soft flexible</td>
+		</tr>
+    <tr>
+			<td class="bs-checkbox "><input data-index="10" name="btSelectItem" type="checkbox"></td>
+      <td>algae</td>
+<td>agar agar</td>
+<td>glycerin</td>
+<td>glycerin</td>
+<td>water</td>
+<td>water</td>
+<td> </td>
+<td> </td>
+<td>heat</td>
+<td>material</td>
+<td>soft</td>
+<td>bioplastic</td>
+<td>transparent translucent bioplastic flexible </td>
+		</tr>
+    <tr>
+			<td class="bs-checkbox "><input data-index="10" name="btSelectItem" type="checkbox"></td>
+      <td>glycerin</td>
+<td>glycerin</td>
+<td>food</td>
+<td>gelatin</td>
+<td>water</td>
+<td>water</td>
+<td> </td>
+<td> </td>
+<td>heat</td>
+<td>bioplastic</td>
+<td>hard</td>
+<td>bioplastic</td>
+<td>elastic transparent translucent bioplastic </td>
+		</tr>
+    <tr>
+			<td class="bs-checkbox "><input data-index="10" name="btSelectItem" type="checkbox"></td>
+      <td>glycerin</td>
+<td>glycerin</td>
+<td>food</td>
+<td>gelatin </td>
+<td>water</td>
+<td>water</td>
+<td>mineral</td>
+<td>red ochre</td>
+<td>heat</td>
+<td>textile</td>
+<td>hard</td>
+<td>leather</td>
+<td>leather bio-based hard flat </td>
+		</tr>
+    <tr>
+			<td class="bs-checkbox "><input data-index="10" name="btSelectItem" type="checkbox"></td>
+      <td>seafood</td>
+<td>fish skin</td>
+<td>vinegar</td>
+<td>vinegar </td>
+<td> </td>
+<td> </td>
+<td> </td>
+<td> </td>
+<td>heat</td>
+<td>material</td>
+<td>soft</td>
+<td>bioplastic</td>
+<td>bioplastic transparent translucent seafood fish food-waste marine</td>
+		</tr>
+    <tr>
+			<td class="bs-checkbox "><input data-index="10" name="btSelectItem" type="checkbox"></td>
+      <td>food</td>
+<td>orange peel</td>
+<td>starch</td>
+<td>starch</td>
+<td>chemical</td>
+<td>sodium bicarbonate</td>
+<td>vinegar</td>
+<td>lemon juice</td>
+<td>heat</td>
+<td>bioplastic</td>
+<td>hard</td>
+<td>bioplastic</td>
+<td>coffee hard homeware rough bowl mug </td>
+		</tr>
+    <tr>
+			<td class="bs-checkbox "><input data-index="10" name="btSelectItem" type="checkbox"></td>
+      <td>food</td>
+<td>coffee ground</td>
+<td>starch</td>
+<td>starch</td>
+<td>chemical</td>
+<td>sodium bicarbonate</td>
+<td>vinegar</td>
+<td>vinegar</td>
+<td>heat</td>
+<td>bioplastic</td>
+<td>hard</td>
+<td>bioplastic</td>
+<td>hard homeware rough bowl </td>
+		</tr>
+    <tr>
+			<td class="bs-checkbox "><input data-index="10" name="btSelectItem" type="checkbox"></td>
+      <td>food</td>
+<td>watermelon peel</td>
+<td>starch</td>
+<td>starch</td>
+<td>food</td>
+<td>honey</td>
+<td>vinegar</td>
+<td>lemon juice</td>
+<td>heat</td>
+<td>bioplastic</td>
+<td>soft</td>
+<td>bioplastic</td>
+<td>flexible soft material</td>
+		</tr>
+    <tr>
+			<td class="bs-checkbox "><input data-index="10" name="btSelectItem" type="checkbox"></td>
+      <td>food</td>
+<td>banana peel</td>
+<td>glycerin</td>
+<td>glycerin</td>
+<td>vinegar</td>
+<td>vinegar</td>
+<td>chemical</td>
+<td>baking soda</td>
+<td>heat</td>
+<td>bioplastic</td>
+<td>hard</td>
+<td>bioplastic</td>
+<td>hard homeware rough </td>
+		</tr>
+    <tr>
+			<td class="bs-checkbox "><input data-index="10" name="btSelectItem" type="checkbox"></td>
+      <td>food</td>
+<td>tea waste</td>
+<td>starch</td>
+<td>starch</td>
+<td>vinegar</td>
+<td>vinegar</td>
+<td>food</td>
+<td>honey</td>
+<td>heat</td>
+<td>bioplastic</td>
+<td>hard</td>
+<td>bioplastic</td>
+<td>hard homeware rough flat</td>
+		</tr>
+    <tr>
+			<td class="bs-checkbox "><input data-index="10" name="btSelectItem" type="checkbox"></td>
+      <td>food</td>
+<td>grapes peel</td>
+<td>starch</td>
+<td>starch</td>
+<td>vinegar</td>
+<td>lemon juice</td>
+<td>food</td>
+<td>honey</td>
+<td>heat</td>
+<td>bioplastic</td>
+<td>hard</td>
+<td>bioplastic</td>
+<td>hard bowl mug houseware food rough</td>
+		</tr>
+    <tr>
+			<td class="bs-checkbox "><input data-index="10" name="btSelectItem" type="checkbox"></td>
+      <td>food</td>
+<td>coffee ground</td>
+<td>starch</td>
+<td>starch</td>
+<td>vinegar</td>
+<td>vinegar</td>
+<td>glycerin</td>
+<td>glycerin</td>
+<td>heat</td>
+<td>bioplastic</td>
+<td>hard</td>
+<td>bioplastic</td>
+<td>coffee hard board game mould food rough</td>
+		</tr>
+    <tr>
+			<td class="bs-checkbox "><input data-index="10" name="btSelectItem" type="checkbox"></td>
+      <td>food</td>
+  <td>nutshell</td>
+  <td>food</td>
+  <td>coffee ground</td>
+  <td>algae</td>
+  <td>agar</td>
+  <td>glycerin</td>
+  <td>glycerin</td>
+  <td>heat</td>
+  <td>bioplastic</td>
+  <td>hard</td>
+  <td>bioplastic</td>
+  <td>cork hard flat board rough coffee game mould food rough</td>
+		</tr>
+    <tr>
+			<td class="bs-checkbox "><input data-index="10" name="btSelectItem" type="checkbox"></td>
+      <td>starch</td>
+<td>starch</td>
+<td>glycerin</td>
+<td>glycerin</td>
+<td>vinegar</td>
+<td>vinegar</td>
+<td> </td>
+<td> </td>
+<td>heat</td>
+<td>bioplastic</td>
+<td>flexible</td>
+<td>bioplastic</td>
+<td>elastic translucent bioplastic </td>
+		</tr>
+    <tr>
+			<td class="bs-checkbox "><input data-index="10" name="btSelectItem" type="checkbox"></td>
+      <td>starch</td>
+<td>starch</td>
+<td>food</td>
+<td>oil</td>
+<td>water</td>
+<td>water</td>
+<td> </td>
+<td> </td>
+<td>heat</td>
+<td>bioplastic</td>
+<td>soft</td>
+<td>bioplastic</td>
+<td>elastic bioplastic </td>
+		</tr>
+    <tr>
+			<td class="bs-checkbox "><input data-index="10" name="btSelectItem" type="checkbox"></td>
+      <td>starch</td>
+<td>starch</td>
+<td>vinegar</td>
+<td>vinegar</td>
+<td>glycerin</td>
+<td>glycerin</td>
+<td>algae</td>
+<td>agar</td>
+<td>heat</td>
+<td>bioplastic</td>
+<td>hard</td>
+<td>bioplastic</td>
+<td>bioplastic biodegradable transparent translucent food wrap</td>
+		</tr>
+    <tr>
+			<td class="bs-checkbox "><input data-index="10" name="btSelectItem" type="checkbox"></td>
+      <td>starch</td>
+<td>starch</td>
+<td>chemical</td>
+<td>coal</td>
+<td>vinegar</td>
+<td>vinegar</td>
+<td>glycerin</td>
+<td>glycerin</td>
+<td>heat</td>
+<td>bioplastic</td>
+<td>hard</td>
+<td>bioplastic</td>
+<td>shoe fashion hard rubber sole</td>
+		</tr>
+    <tr>
+			<td class="bs-checkbox "><input data-index="10" name="btSelectItem" type="checkbox"></td>
+      <td>seafood</td>
+    <td>fish</td>
+    <td> </td>
+    <td> </td>
+    <td> </td>
+    <td> </td>
+    <td> </td>
+    <td> </td>
+    <td>heat</td>
+    <td>glue</td>
+    <td>soft</td>
+    <td>bioresin</td>
+    <td>tool glue bio-resin plant seafood collagen marine</td>
+		</tr>
+    <tr>
+			<td class="bs-checkbox "><input data-index="10" name="btSelectItem" type="checkbox"></td>
+      <td>plant</td>
+      <td>pine pitch</td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+      <td>heat</td>
+      <td>glue</td>
+      <td>soft</td>
+      <td>bioresin</td>
+      <td>tool glue bio-resin plant</td>
+		</tr>
+    <tr>
+			<td class="bs-checkbox "><input data-index="10" name="btSelectItem" type="checkbox"></td>
+      <td>starch</td>
+      <td>starch</td>
+      <td>glycerin</td>
+      <td>glycerin</td>
+      <td>vinegar</td>
+      <td>vinegar</td>
+      <td>water</td>
+      <td>water</td>
+      <td>heat</td>
+      <td>bioplastic</td>
+      <td>soft</td>
+      <td>bioplastic</td>
+      <td>jewelry transparent mould</td>
+		</tr>
+    <tr>
+			<td class="bs-checkbox "><input data-index="10" name="btSelectItem" type="checkbox"></td>
+      <td>plastic</td>
+      <td>plastic</td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+      <td>heat</td>
+      <td>composite</td>
+      <td>hard</td>
+      <td>material</td>
+      <td>plastic heatpress hdpe recycle flat tile</td>
+		</tr>
+    <tr>
+			<td class="bs-checkbox "><input data-index="10" name="btSelectItem" type="checkbox"></td>
+      <td>food</td>
+      <td>grape</td>
+      <td>glycerin</td>
+      <td>glycerin</td>
+      <td>algae</td>
+      <td>agar agar</td>
+      <td> </td>
+      <td> </td>
+      <td>heat</td>
+      <td>bioplastic</td>
+      <td>hard</td>
+      <td>bioplastic</td>
+      <td>dry hard translucent material</td>
+		</tr>
+    <tr>
+			<td class="bs-checkbox "><input data-index="10" name="btSelectItem" type="checkbox"></td>
+      <td>food</td>
+      <td>nutshell</td>
+      <td>fungi</td>
+      <td>mycelium</td>
+      <td>chemical</td>
+      <td>flour</td>
+      <td> </td>
+      <td> </td>
+      <td>heat</td>
+      <td>composite</td>
+      <td>hard</td>
+      <td>material</td>
+      <td>composite mug bowl rough solid</td>
+		</tr>
+    <tr>
+			<td class="bs-checkbox "><input data-index="10" name="btSelectItem" type="checkbox"></td>
+      <td>algae</td>
+      <td>seaweed</td>
+      <td>food</td>
+      <td>eggshell</td>
+      <td>vinegar</td>
+      <td>vinegar</td>
+      <td> </td>
+      <td> </td>
+      <td>heat</td>
+      <td>bioplastic</td>
+      <td>flexible</td>
+      <td>bioplastic</td>
+      <td>food wrap transparent translucent stretch flexible calcium lactate</td>
+		</tr>
+    <tr>
+			<td class="bs-checkbox "><input data-index="10" name="btSelectItem" type="checkbox"></td>
+      <td>algae </td>
+      <td>red algae powder</td>
+      <td>water</td>
+      <td>water</td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+      <td>heat</td>
+      <td>bioplastic</td>
+      <td>hard</td>
+      <td>bioplastic</td>
+      <td>red algae powder bottle mug bioplastic biodegradable translucent</td>
+		</tr>
+    <tr>
+      <td class="bs-checkbox "><input data-index="10" name="btSelectItem" type="checkbox"></td>
+      <td>food</td>
+      <td>fruit peel</td>
+      <td>cellulose</td>
+      <td>cellulose</td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+      <td>mix</td>
+      <td>bioplastic</td>
+      <td>hard</td>
+      <td>bioplastic</td>
+      <td>fermented microbial cellulose grow bioplastic translucent food package</td>
+    </tr>
+    <tr>
+      <td class="bs-checkbox "><input data-index="10" name="btSelectItem" type="checkbox"></td>
+      <td>cellulose</td>
+      <td>cellulose</td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+      <td>grow</td>
+      <td>textile</td>
+      <td>hard</td>
+      <td>material</td>
+      <td>grow cellulose shining fashion textile</td>
+    </tr>
+    <tr>
+      <td class="bs-checkbox "><input data-index="10" name="btSelectItem" type="checkbox"></td>
+      <td>algae</td>
+      <td>red algae</td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+      <td>heat</td>
+      <td>bioplastic</td>
+      <td>soft</td>
+      <td>bioplastic</td>
+      <td>algae transparent translucent bioplastic </td>
+    </tr>
+    <tr>
+      <td class="bs-checkbox "><input data-index="10" name="btSelectItem" type="checkbox"></td>
+      <td>animal</td>
+      <td>animal bone</td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+      <td>heat</td>
+      <td>glue</td>
+      <td>soft</td>
+      <td>bioresin</td>
+      <td>bone glus natural resin bio-resin</td>
+    </tr>
+    <tr>
+      <td class="bs-checkbox "><input data-index="10" name="btSelectItem" type="checkbox"></td>
+      <td>starch</td>
+      <td>starch</td>
+      <td>glycerin</td>
+      <td>glycerin</td>
+      <td>vinegar</td>
+      <td>vinegar</td>
+      <td>water</td>
+      <td>water</td>
+      <td>heat</td>
+      <td>bioplastic</td>
+      <td>flexible</td>
+      <td>bioplastic</td>
+      <td>translucent</td>
+    </tr>
+    <tr>
+      <td class="bs-checkbox "><input data-index="10" name="btSelectItem" type="checkbox"></td>
+      <td>starch</td>
+      <td>starch</td>
+      <td>glycerin</td>
+      <td>glycerin</td>
+      <td>vinegar</td>
+      <td>vinegar</td>
+      <td>oil</td>
+      <td>oil</td>
+      <td>heat</td>
+      <td>bioplastic</td>
+      <td>flexible</td>
+      <td>bioplastic</td>
+      <td>translucent</td>
+    </tr>
+    <tr>
+      <td class="bs-checkbox "><input data-index="10" name="btSelectItem" type="checkbox"></td>
+      <td>food</td>
+      <td>banana peel </td>
+      <td>vinegar</td>
+      <td>vinegar</td>
+      <td>food</td>
+      <td>honey</td>
+      <td> </td>
+      <td> </td>
+      <td>heat</td>
+      <td>bioplastic</td>
+      <td>soft</td>
+      <td>bioplastic</td>
+      <td>composite soft </td>
+    </tr>
+	</tbody>
+</table>
+<footer>
+  <br />
+  <p>2019 MLMaterial . Janet Choi</p>
+  <p>Modified from Bootstrap Table : <a href="http://bootstrap-table.wenzhixin.net.cn/documentation/">Bootstrap Table Documentation</a></p>
+
+</footer>
+</div>
+<!-- partial -->
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+<script src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.10.0/bootstrap-table.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.9.1/extensions/editable/bootstrap-table-editable.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.9.1/extensions/export/bootstrap-table-export.js'></script>
+<script src='https://rawgit.com/hhurz/tableExport.jquery.plugin/master/tableExport.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.9.1/extensions/filter-control/bootstrap-table-filter-control.js'></script><script  src="./script.js"></script>
+
+</body>
+</html>
