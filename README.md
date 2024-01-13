@@ -1,4 +1,4 @@
-# MLM
+# Materialib
 
 A material Library which collects existing sustainable material projects, 2019
 
